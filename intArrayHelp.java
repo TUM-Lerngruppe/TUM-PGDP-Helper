@@ -22,6 +22,72 @@ public class intArrayHelp {
         return new_array;
     }
 
+    /** Methode, die die maximale Value zurückgibt, bei einem leeren Array Integer.MIN_VALUE
+     *
+     * @param array Array of Integers
+     * @return maximum
+     */
+    public static int maxValue(int[] array){
+        int max = Integer.MIN_VALUE;
+        for (int j : array) {
+            if (j > max) {
+                max = j;
+            }
+        }
+        return max;
+    }
+
+    /** Methode, die den Index der ersten maximalen Value zurückgibt, bei einer leeren Liste -1
+     * !!!Achtung bei einer liste mit nur Integer.MIN_VALUE wir trotzdem -1 Zurückgegeben!!!
+     *
+     * @param array Array of Integers
+     * @return Maximaler index
+     */
+    public static int maxValueIndex(int[] array){
+        int max = Integer.MIN_VALUE;
+        int index = -1;
+        for (int i = 0; i< array.length; i++) {
+            if (array[i] > max) {
+                max = array[i];
+                index = i;
+            }
+        }
+        return index;
+    }
+
+    /** Methode, die die minimale Value zurückgibt, bei einem leeren Array Integer.MAX_VALUE
+     *
+     * @param array Array of Integers
+     * @return minimum
+     */
+    public static int minValue(int[] array){
+        int min = Integer.MAX_VALUE;
+        for (int j : array) {
+            if (j < min) {
+                min = j;
+            }
+        }
+        return min;
+    }
+
+    /** Methode, die den Index der ersten minimalen Value zurückgibt, bei einer leeren Liste -1
+     * !!!Achtung bei einer liste mit nur Integer.MAX_VALUE wir trotzdem -1 Zurückgegeben!!!
+     *
+     * @param array Array of Integers
+     * @return Index des ersten minimum
+     */
+    public static int minValueIndex(int[] array){
+        int min = Integer.MAX_VALUE;
+        int index = -1;
+        for (int i = 0; i< array.length; i++) {
+            if (array[i] < min) {
+                min = array[i];
+                index = i;
+            }
+        }
+        return index;
+    }
+
     /** Methode, die zwei Arrays zu einem einzigen Array verbindet,
      *  indem sie abwechselnd starting with a von jedem Array einen Eintrag nimmt,
      *  bis alle aufgebraucht sind.
@@ -122,6 +188,5 @@ public class intArrayHelp {
             }
         }
     }
-
 
 }
